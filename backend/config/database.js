@@ -31,7 +31,6 @@ const username = db.username;
 const password = db.password;
 const database = db.database;
 const host = db.host;
-const dialect = 'postgres'
 
 module.exports = {
   development: {
@@ -39,7 +38,7 @@ module.exports = {
     password,
     database,
     host,
-    dialect,
+    dialect: 'postgres',
     seederStorage: 'sequelize',
     dialectOptions: {
       ssl: {
