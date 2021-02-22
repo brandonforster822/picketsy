@@ -1,5 +1,5 @@
 {
-  "name": "authenticate-me",
+  "name": "picketsy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandonforster822/authenticate-me.git"
+    "url": "git+https://github.com/brandonforster822/picketsy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brandonforster822/authenticate-me/issues"
+    "url": "https://github.com/brandonforster822/picketsy/issues"
   },
-  "homepage": "https://github.com/brandonforster822/authenticate-me#readme"
+  "homepage": "https://github.com/brandonforster822/picketsy#readme"
 }
