@@ -80,7 +80,8 @@ module.exports = (sequelize, DataTypes) => {
     return await User.scope('currentUser').findByPk(user.id);
   };
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Review, {foreignKey: 'userId', as: 'reviews'})
+    User.hasMany(models.Listing, {foreignKey: 'userId', as: 'listings'})
   };
   return User;
 };

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom';
 
 function LoginForm() {
+  const history = useHistory()
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -45,7 +47,12 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
+      <label>
+        Don't have an account?
+      </label>
+      <button onClick={() => {history.push("/signup")}}>Sign up!</button>
     </form>
+
   );
 }
 
