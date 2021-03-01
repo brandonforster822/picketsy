@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 const { port } = require('../config');
+// console.log(port, process.env.NODE_ENV)
 
 const app = require('../app');
+console.log('hello')
 const db = require('../db/models');
-
 
 db.sequelize
   .authenticate()
   .then(() => {
+    // console.log(process.env.NODE_ENV)
     console.log('Database connection success! Sequelize is ready to use...');
 
-
-    app.listen(port);
+    app.listen(port, () => console.log(`Listening on port ${port}...`));
   })
   .catch((err) => {
     console.log('Database connection failure.');

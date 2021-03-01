@@ -6,6 +6,7 @@ const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
 const routes = require('./routes')
 const { ValidationError } = require('sequelize');
+const bodyParser = require("body-parser")
 
 const { environment } = require('./config')
 const isProduction = environment === 'production'
@@ -14,7 +15,8 @@ const app = express()
 
 app.use(morgan('dev'))
 app.use(cookieParser())
-app.use(express.json())
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 if(!isProduction) {
     app.use(cors())
@@ -36,16 +38,15 @@ app.use(
 
 app.use(routes)
 
-// app.use((_req, _res, next) => {
-//     const err = new Error("The requested resource couldn't be found.");
-//     err.title = "Resource Not Found";
-//     err.errors = ["The requested resource couldn't be found."];
-//     err.status = 404;
-//     next(err);
-// });
+app.use((_req, _res, next) => {
+    const err = new Error("The requested resource couldn't be found.");
+    err.title = "Resource Not Found";
+    err.errors = ["The requested resource couldn't be found."];
+    err.status = 404;
+    next(err);
+});
 
 app.use((err, _req, _res, next) => {
-    // check if error is a Sequelize error:
     if (err instanceof ValidationError) {
         err.errors = err.errors.map((e) => e.message);
         err.title = 'Validation error';
