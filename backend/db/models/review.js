@@ -6,9 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     listingId: DataTypes.INTEGER
   }, {});
+
+  Review.createReview = async function ({ comment, rating, userId, listingId }) {
+    const review = await Review.create({ comment, rating, userId, listingId })
+    return review
+  }
+
   Review.associate = function(models) {
-    Review.belongsTo(models.User, {foreignKey: 'userId'})
-    Review.belongsTo(models.Listing, {foreignKey: 'listingId'})
   };
   return Review;
 };

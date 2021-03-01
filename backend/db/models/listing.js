@@ -8,11 +8,23 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     description: DataTypes.TEXT,
     imgLink: DataTypes.STRING,
-    category: DataTypes.STRING
+    category: DataTypes.STRING,
+    price: DataTypes.STRING
   }, {});
+
+  Listing.createListing = async function ({ name, userId, description, imgLink, category, price}) {
+    const listing = await Listing.create({
+      name,
+      userId,
+      description,
+      imgLink,
+      category,
+      price
+    })
+    return listing
+  }
+
   Listing.associate = function(models) {
-    Listing.belongsTo(models.User, {foreignKey: 'userId'})
-    Listing.hasMany(models.Review, {foreignKey: 'listingId', as: 'reviews'})
   };
   return Listing;
 };

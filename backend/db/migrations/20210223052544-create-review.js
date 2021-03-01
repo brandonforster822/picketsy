@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       comment: {
-        type: Sequelize.TEXT(500)
+        type: Sequelize.STRING(500)
       },
       rating: {
         type: Sequelize.INTEGER
@@ -17,18 +17,10 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-          model: "Users",
-          key: "id"
-        }
       },
       listingId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-          model: "Listings",
-          key: "id"
-        }
       },
       createdAt: {
         allowNull: false,

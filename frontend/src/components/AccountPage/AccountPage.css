@@ -1,0 +1,125 @@
+.page-container{
+    display: grid;
+    grid-template-columns: 10% 10% 60% 10% 10%;
+    grid-template-rows: 120px auto;
+}
+
+.account-header{
+    display: grid;
+    grid-template-columns: 120px auto 200px;
+    background-color: #612940;
+    border-radius: 50px;
+    height: 120px;
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    overflow: hidden;
+    /* align-items: center; */
+}
+
+.account-header>img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.account-header>h3{
+    padding-left: 10px;
+    font-size: 30px;
+    color: #CECCCC;
+    text-shadow: 3px 3px 3px black;
+    padding-top: 10px;
+}
+
+.account-header li{
+    font-size: 20px;
+    color: #CECCCC;
+    text-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}
+
+.account-header ul{
+    margin-top: 5px;
+}
+
+.account-header li:hover{
+    font-size: 22px;
+}
+
+.content-container{
+    grid-row-start: 2;
+    grid-column-start: 3;
+    
+    margin-top: 50px;
+}
+
+.listing-container{
+    width: 100%;
+    background-color: #9D6381;
+    border-radius: 50px;
+    height: 120px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    margin-bottom: 20px;
+}
+
+
+.item-name{
+    height: 120px;
+}
+.item-name>h4{
+    padding-left: 42px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.item-name>img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.item-description>h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.item-price>h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.review-name{
+    height: 120px;
+}
+.review-name>h4{
+    padding-left: 42px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.review-name>img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.review-description>h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.review-rating>h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

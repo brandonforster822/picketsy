@@ -58,7 +58,11 @@ router.get(
         return res.json({
           user: user.toSafeObject()
         });
-      } else return res.json({});
+      } else {
+        console.log(user)
+        return res.json({});
+      }
     }
   );
+
 module.exports = router;
